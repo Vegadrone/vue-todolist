@@ -4,12 +4,7 @@ const app = new Vue(
 
         data: {
 
-            newToDo:{
-                text:"",
-                done:false,
-            },
-
-            currentToDo: 0,
+            newToDo: "",
 
             toDos: [
                 {
@@ -52,16 +47,21 @@ const app = new Vue(
                 this.toDos.splice(this.toDos.indexOf(toDo), 1);
             },
 
-            addNewToDo: function(elToAdd) {
-                this.toDos.push(elToAdd); 
-                // this.newToDo = "";         
+            addNewToDo: function () {
+                if (this.newToDo === "") {
+                    alert('Inserisci del testo');
+                } else {
+                    this.toDos.push({ text: this.newToDo, done: false });
+                    this.newToDo = "";
+                };
+
             },
 
-            doneAndUndone: function(index){
-                if(this.toDos[index].done === false){
+            doneAndUndone: function (index) {
+                if (this.toDos[index].done === false) {
                     this.toDos[index].done = true;
                 } else {
-                    this.toDos[index].done = false; 
+                    this.toDos[index].done = false;
                 }
             }
         }
