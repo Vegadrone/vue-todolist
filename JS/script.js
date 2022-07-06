@@ -9,6 +9,8 @@ const app = new Vue(
                 done:false,
             },
 
+            currentToDo: 0,
+
             toDos: [
                 {
                     text: 'Fare i compiti',
@@ -52,7 +54,15 @@ const app = new Vue(
 
             addNewToDo: function(elToAdd) {
                 this.toDos.push(elToAdd); 
-                // this.newToDo = "";              
+                // this.newToDo = "";         
+            },
+
+            doneAndUndone: function(index){
+                if(this.toDos[index].done === false){
+                    this.toDos[index].done = true;
+                } else {
+                    this.toDos[index].done = false; 
+                }
             }
         }
     },

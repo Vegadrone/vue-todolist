@@ -23,14 +23,14 @@
                 <div class="col-12">
                     <ul class="list-group">
                         <li class="list-group-item fw-bold fs-3 text-center" 
-                            v-for="(toDo, index) in toDos"><span 
-                            :class="{'done': toDos[index].done === true}">{{toDos[index].text}}</span>
+                            v-for="(toDo, index) in toDos">
+                            <span :class="{'done': toDos[index].done === true}" @click="doneAndUndone(index)">{{toDos[index].text}}</span>
                             <span class="x-mark" @click="deleteToDo(toDo)">&#10060</span>
                         </li>
                     </ul>
                 </div>
                 <div class="col-12 mt-3 d-flex justify-content-center">
-                    <input class="mx-3" type="text" v-model="newToDo.text">
+                    <input class="mx-3" type="text" v-model="newToDo.text" @keyup.enter="addNewToDo(newToDo)">
                     <a href="#" class="btn btn-success" @click="addNewToDo(newToDo)">Aggiungi alla lista!</a>
                 </div>
             </div>
