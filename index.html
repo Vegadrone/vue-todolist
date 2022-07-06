@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="list-group">
-                        <li class="list-group-item fw-bold fs-3 text-center" :class="{'done': toDos[index].done === true}" v-for="(toDo, index) in toDos">{{toDos[index].text}}</li>
+                        <li class="list-group-item fw-bold fs-3 text-center" v-for="(toDo, index) in toDos"><span :class="{'done': toDos[index].done === true}">{{toDos[index].text}}</span><span class="x-mark">&#10060</span></li>
                     </ul>
                 </div>
             </div>

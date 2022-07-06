@@ -5,6 +5,15 @@ body{
 .done {
     text-decoration: line-through;
     text-decoration-color:red ;
-    text-decoration-thickness: 5px;
-    
+    text-decoration-thickness: 5px;   
+}
+
+.x-mark {
+    font-size: 1rem;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.x-mark:hover{
+    cursor: pointer;
 }
