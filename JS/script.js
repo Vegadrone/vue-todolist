@@ -4,7 +4,10 @@ const app = new Vue(
 
         data: {
 
-            toDosElIndex: 0,
+            newToDo:{
+                text:"",
+                done:false,
+            },
 
             toDos: [
                 {
@@ -45,6 +48,11 @@ const app = new Vue(
         methods: {
             deleteToDo: function (toDo) {
                 this.toDos.splice(this.toDos.indexOf(toDo), 1);
+            },
+
+            addNewToDo: function(elToAdd) {
+                this.toDos.push(elToAdd); 
+                // this.newToDo = "";              
             }
         }
     },
